@@ -1,4 +1,3 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:sonede/widgets/background-image.dart';
@@ -14,7 +13,6 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   String _email, _password;
-  FirebaseAuth instance = FirebaseAuth.instance;
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -40,12 +38,11 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                     Image.asset(
-                      "assets/icons/sonede-removebg.png",
-                      width: size.width * 0.4,
-                      color: Colors.blue[900],
+                      "assets/icons/clipart-removebg-preview.png",
+                      width: size.width * 0.2,
                     ),
                     SizedBox(
-                      height: size.height * 0.04,
+                      height: size.height * 0.1,
                     ),
                     Container(
                       padding: const EdgeInsets.symmetric(horizontal: 40),
@@ -85,7 +82,7 @@ class _HomePageState extends State<HomePage> {
                                   style: kBodyText,
                                 ),
                                 onTap: () {
-                                  print("mot de passe oublié");
+                                  Navigator.pushNamed(context, "/recover");
                                 },
                               ),
                             ],
@@ -96,32 +93,8 @@ class _HomePageState extends State<HomePage> {
                                 height: size.height * 0.07,
                               ),
                               RoundedButton(
-                                onPressed: () async {
-                                  try {
-                                    UserCredential credential = await instance
-                                        .signInWithEmailAndPassword(
-                                            email: _email, password: _password);
-                                    Navigator.pushNamed(
-                                        context, "/showScreens");
-                                  } on FirebaseAuthException catch (e) {
-                                    if (e.code == 'user-not-found') {
-                                      throw ScaffoldMessenger.of(context)
-                                          .showSnackBar(
-                                        SnackBar(
-                                          content: const Text(
-                                              'utilisateur non trouvée '),
-                                        ),
-                                      );
-                                    } else if (e.code == 'wrong-password') {
-                                      throw ScaffoldMessenger.of(context)
-                                          .showSnackBar(
-                                        SnackBar(
-                                          content: const Text(
-                                              'mauvais mot de passe'),
-                                        ),
-                                      );
-                                    }
-                                  }
+                                onPressed: () {
+                                  Navigator.pushNamed(context, "/showScreens");
                                 },
                                 buttonText: "Login",
                               ),

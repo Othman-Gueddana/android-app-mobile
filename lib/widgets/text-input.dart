@@ -6,8 +6,8 @@ class TextInput extends StatefulWidget {
     Key key,
     @required this.icon,
     @required this.hint,
-    this.inputType,
-    this.inputAction,
+    @required this.inputType,
+    @required this.inputAction,
     @required this.onChanged,
   }) : super(key: key);
 
@@ -22,7 +22,6 @@ class TextInput extends StatefulWidget {
 }
 
 class _TextInputState extends State<TextInput> {
-  String _email, _password;
   @override
   Widget build(BuildContext context) {
     return Container(

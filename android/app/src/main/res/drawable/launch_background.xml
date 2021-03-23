@@ -2,9 +2,9 @@
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:drawable="@android:color/white" />
     <item
-    android:width="350dp"
-    android:height="200dp"
-    android:drawable="@drawable/sonede"
+    android:width="150dp"
+    android:height="150dp"
+    android:drawable="@drawable/clipart"
     android:gravity="center" 
     />
 </layer-list>

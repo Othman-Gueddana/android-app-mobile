@@ -1,4 +1,3 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:sonede/widgets/rounded-button.dart';
@@ -13,7 +12,6 @@ class Register extends StatefulWidget {
 
 class _RegisterState extends State<Register> {
   String _email, _password, _nameAndLastName, _phone, _cin, _adresse;
-  FirebaseAuth instance = FirebaseAuth.instance;
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -143,29 +141,8 @@ class _RegisterState extends State<Register> {
                         height: size.height * 0.02,
                       ),
                       RoundedButton(
-                        onPressed: () async {
-                          try {
-                            UserCredential credential =
-                                await instance.createUserWithEmailAndPassword(
-                                    email: this._email,
-                                    password: this._password);
-                            Navigator.of(context).popAndPushNamed("/");
-                          } on FirebaseAuthException catch (e) {
-                            if (e.code == 'email-already-in-use') {
-                              throw ScaffoldMessenger.of(context).showSnackBar(
-                                SnackBar(
-                                  content:
-                                      const Text('utilisateur déja utilisé'),
-                                ),
-                              );
-                            } else if (e.code == 'weak-password') {
-                              throw ScaffoldMessenger.of(context).showSnackBar(
-                                SnackBar(
-                                  content: const Text('mot de passe faible'),
-                                ),
-                              );
-                            }
-                          }
+                        onPressed: () {
+                          Navigator.of(context).pushNamed("/");
                         },
                         buttonText: "Enregistrer",
                       ),

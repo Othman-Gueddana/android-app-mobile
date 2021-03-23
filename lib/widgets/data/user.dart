@@ -1,16 +1,15 @@
 class User {
-  int cin;
-  int tel;
+  final int tel;
   String nomEtPrenom;
-  String adresse;
+  final String adresse;
 
-  User({this.tel, this.adresse, this.nomEtPrenom, this.cin});
+  User({this.tel, this.adresse, this.nomEtPrenom});
 }
 
 List<User> users = [
   User(
-      cin: 09775750,
-      tel: 12345678,
-      adresse: "rue kheireddine bacha korba",
-      nomEtPrenom: "othman gueddana"),
+    tel: 26438350,
+    adresse: "23 rue Gafsa manzeh 5,Ariana",
+    nomEtPrenom: "othman gueddana",
+  ),
 ];

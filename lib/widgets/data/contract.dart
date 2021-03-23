@@ -9,26 +9,10 @@ class Contract {
 List<Contract> contracts = [
   Contract(
       contrat: 12345678,
-      adresse: "rue kheireddine bacha korba",
+      adresse: "rue kheireddine bacha korba,Nabeul",
       nomEtPrenom: "othman gueddana"),
   Contract(
       contrat: 12345678,
-      adresse: "rue kheireddine bacha korba",
-      nomEtPrenom: "othman gueddana"),
-  Contract(
-      contrat: 12345678,
-      adresse: "rue kheireddine bacha korba",
-      nomEtPrenom: "othman gueddana"),
-  Contract(
-      contrat: 12345678,
-      adresse: "rue kheireddine bacha korba",
-      nomEtPrenom: "othman gueddana"),
-  Contract(
-      contrat: 12345678,
-      adresse: "rue kheireddine bacha korba",
-      nomEtPrenom: "othman gueddana"),
-  Contract(
-      contrat: 12345678,
-      adresse: "rue kheireddine bacha korba",
-      nomEtPrenom: "othman gueddana"),
+      adresse: "24 rue Gafsa manzeh 5,Ariana",
+      nomEtPrenom: "Mohamed Gueddana"),
 ];
